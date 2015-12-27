@@ -5,10 +5,10 @@
 'use strict';
 
 var React = require('react-native');
-var Image = React.Image;
 
 var {
   AppRegistry,
+  Image,
   StyleSheet,
   Text,
   View,
@@ -18,10 +18,9 @@ var rumblr = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
-        <Image
-          style={styles.logo}
-          source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
-        />
+        <Text>
+          Welcome to Rumblr
+        </Text>
       </View>
     );
   }
@@ -36,7 +35,7 @@ var styles = StyleSheet.create({
   },
   logo: {
     height: 100,
-    width: 100
+    width: 200
   }
 });
 
