@@ -17,9 +17,6 @@
                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Default" translatesAutoresizingMaskIntoConstraints="NO" id="fbd-Ax-YZ9">
-                    <rect key="frame" x="-4" y="91" width="484" height="295"/>
-                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
@@ -32,7 +29,4 @@
             <point key="canvasLocation" x="548" y="455"/>
         </view>
     </objects>
-    <resources>
-        <image name="Default" width="320" height="480"/>
-    </resources>
 </document>
