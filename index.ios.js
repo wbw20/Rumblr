@@ -16,10 +16,13 @@ var {
 } = React;
 
 var fights = [{
-  opponent: {
-    name: 'Jamarkis Day',
-    age: 29
-  }
+  name: 'Jamarkis Day',
+  age: 29,
+  profile: 'http://static.happy-tripping.com/images/travel1.png'
+}, {
+  name: 'Patrick Sandwich',
+  age: 91,
+  profile: 'http://static.happy-tripping.com/images/travel1.png'
 }];
 
 var rumblr = React.createClass({
@@ -29,7 +32,7 @@ var rumblr = React.createClass({
     });
 
     return {
-      dataSource: ds.cloneWithRows(['Larry', 'Jamarkis', 'Will', 'Jason Muhlstein']),
+      dataSource: ds.cloneWithRows(fights),
     };
   },
 
@@ -37,8 +40,26 @@ var rumblr = React.createClass({
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={(rowData) => <Text>{rowData}</Text>}
+        renderRow={(rowData) => <Text>{rowData.name}</Text>}
       />
+    );
+  },
+
+  _renderRow: function(rowData: string, sectionID: number, rowID: number) {
+    var rowHash = Math.abs(hashCode(rowData));
+    var imgSource = THUMB_URLS[rowHash % THUMB_URLS.length];
+    return (
+      <TouchableHighlight onPress={() => this._pressRow(rowID)}>
+        <View>
+          <View style={styles.row}>
+            <Image style={styles.thumb} source={imgSource} />
+            <Text style={styles.text}>
+              {rowData + ' - ' + LOREM_IPSUM.substr(0, rowHash % 301 + 10)}
+            </Text>
+          </View>
+          <View style={styles.separator} />
+        </View>
+      </TouchableHighlight>
     );
   }
 });
