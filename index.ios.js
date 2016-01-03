@@ -23,7 +23,7 @@ var fights = [{
 }, {
   name: 'Patrick Sandwich',
   age: 91,
-  profile: require('./assets/avatar.png')
+  profile: require('./assets/will.png')
 }, {
   name: 'Dale Nogowski',
   age: 32,
@@ -35,7 +35,7 @@ var fights = [{
 }, {
   name: 'Clarence Shingle',
   age: 2,
-  profile: require('./assets/avatar.png')
+  profile: require('./assets/jason.png')
 }, {
   name: 'Rilt Nabitsky',
   age: 44,
@@ -73,8 +73,10 @@ var rumblr = React.createClass({
         <View>
           <View style={styles.row}>
             <Image style={styles.thumb} source={rowData.profile} />
-            <Text style={styles.text}>{rowData.name}</Text>
-            <Text style={styles.text}>{rowData.age}</Text>
+            <View style={styles.textContainer}>
+              <Text style={styles.name}>{rowData.name}</Text>
+              <Text style={styles.message}>Sup bro?</Text>
+            </View>
           </View>
           <View style={styles.separator} />
         </View>
@@ -86,21 +88,31 @@ var rumblr = React.createClass({
 var styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
-    justifyContent: 'center',
     padding: 10,
     backgroundColor: '#F6F6F6',
   },
+  textContainer: {
+    flexDirection: 'column',
+    alignSelf: 'center',
+  },
   separator: {
     height: 1,
-    backgroundColor: '#CCCCCC',
+    backgroundColor: '#EDEDED',
   },
   thumb: {
     width: 64,
     height: 64,
+    borderRadius: 32,
+    marginRight: 16,
   },
-  text: {
+  name: {
     flex: 1,
+    fontWeight: '500',
   },
+  message: {
+    flex: 1,
+    fontWeight: '300',
+  }
 });
 
 AppRegistry.registerComponent('rumblr', () => rumblr);
