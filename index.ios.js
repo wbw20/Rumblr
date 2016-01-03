@@ -13,6 +13,7 @@ var {
   TouchableHighlight,
   Text,
   View,
+  TextInput,
   ListView
 } = React;
 
@@ -75,10 +76,14 @@ var rumblr = React.createClass({
 
   render: function() {
     return (
-      <ListView
-        dataSource={this.state.dataSource}
-        renderRow={this._renderRow}
-      />
+      <View style={styles.container}>
+        <TextInput style={styles.search} placeholder='Search'/>
+        <Text style={styles.title}>MESSAGES</Text>
+        <ListView
+          dataSource={this.state.dataSource}
+          renderRow={this._renderRow}
+        />
+      </View>
     );
   },
 
@@ -102,10 +107,20 @@ var rumblr = React.createClass({
 });
 
 var styles = StyleSheet.create({
+  container: {
+    padding: 10,
+  },
+  search: {
+    height: 40,
+    borderColor: '#EDEDED',
+    borderWidth: 1,
+    marginTop: 20,
+    textAlign: 'center',
+  },
   row: {
     flexDirection: 'row',
-    padding: 10,
-    backgroundColor: '#F6F6F6',
+    paddingTop: 10,
+    paddingBottom: 10,
   },
   textContainer: {
     flexDirection: 'column',
@@ -120,6 +135,12 @@ var styles = StyleSheet.create({
     height: 64,
     borderRadius: 32,
     marginRight: 16,
+  },
+  title: {
+    flex: 1,
+    fontWeight: '300',
+    marginTop: 15,
+    marginBottom: 15
   },
   name: {
     flex: 1,
