@@ -44,6 +44,22 @@ var fights = [{
   name: 'Jason Shane',
   age: 25,
   profile: require('./assets/avatar.png')
+}, {
+  name: 'Jason Shane',
+  age: 25,
+  profile: require('./assets/avatar.png')
+}, {
+  name: 'Jason Shane',
+  age: 25,
+  profile: require('./assets/avatar.png')
+}, {
+  name: 'Jason Shane',
+  age: 25,
+  profile: require('./assets/avatar.png')
+}, {
+  name: 'Jason Shane',
+  age: 25,
+  profile: require('./assets/avatar.png')
 }];
 
 var rumblr = React.createClass({
