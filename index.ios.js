@@ -10,6 +10,7 @@ var {
   AppRegistry,
   Image,
   StyleSheet,
+  TouchableHighlight,
   Text,
   View,
   ListView
@@ -18,11 +19,31 @@ var {
 var fights = [{
   name: 'Jamarkis Day',
   age: 29,
-  profile: 'http://static.happy-tripping.com/images/travel1.png'
+  profile: require('./assets/avatar.png')
 }, {
   name: 'Patrick Sandwich',
   age: 91,
-  profile: 'http://static.happy-tripping.com/images/travel1.png'
+  profile: require('./assets/avatar.png')
+}, {
+  name: 'Dale Nogowski',
+  age: 32,
+  profile: require('./assets/avatar.png')
+}, {
+  name: 'Dill Mantrip',
+  age: 15,
+  profile: require('./assets/avatar.png')
+}, {
+  name: 'Clarence Shingle',
+  age: 2,
+  profile: require('./assets/avatar.png')
+}, {
+  name: 'Rilt Nabitsky',
+  age: 44,
+  profile: require('./assets/avatar.png')
+}, {
+  name: 'Jason Shane',
+  age: 25,
+  profile: require('./assets/avatar.png')
 }];
 
 var rumblr = React.createClass({
@@ -40,22 +61,20 @@ var rumblr = React.createClass({
     return (
       <ListView
         dataSource={this.state.dataSource}
-        renderRow={(rowData) => <Text>{rowData.name}</Text>}
+        renderRow={this._renderRow}
       />
     );
   },
 
-  _renderRow: function(rowData: string, sectionID: number, rowID: number) {
-    var rowHash = Math.abs(hashCode(rowData));
-    var imgSource = THUMB_URLS[rowHash % THUMB_URLS.length];
+  _renderRow: function(rowData, sectionID, rowID) {
+
     return (
       <TouchableHighlight onPress={() => this._pressRow(rowID)}>
         <View>
           <View style={styles.row}>
-            <Image style={styles.thumb} source={imgSource} />
-            <Text style={styles.text}>
-              {rowData + ' - ' + LOREM_IPSUM.substr(0, rowHash % 301 + 10)}
-            </Text>
+            <Image style={styles.thumb} source={rowData.profile} />
+            <Text style={styles.text}>{rowData.name}</Text>
+            <Text style={styles.text}>{rowData.age}</Text>
           </View>
           <View style={styles.separator} />
         </View>
@@ -65,16 +84,23 @@ var rumblr = React.createClass({
 });
 
 var styles = StyleSheet.create({
-  container: {
-    flex: 1,
+  row: {
+    flexDirection: 'row',
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    padding: 10,
+    backgroundColor: '#F6F6F6',
   },
-  logo: {
-    height: 100,
-    width: 200
-  }
+  separator: {
+    height: 1,
+    backgroundColor: '#CCCCCC',
+  },
+  thumb: {
+    width: 64,
+    height: 64,
+  },
+  text: {
+    flex: 1,
+  },
 });
 
 AppRegistry.registerComponent('rumblr', () => rumblr);
