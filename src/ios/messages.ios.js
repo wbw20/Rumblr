@@ -76,16 +76,20 @@ var Messages = React.createClass({
 
   render: function() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.text} onPress={this.onClick}>
-          Click Me
-        </Text>
-        <TextInput style={styles.search} placeholder='Search'/>
-        <Text style={styles.title}>MESSAGES</Text>
-        <ListView
-          dataSource={this.state.dataSource}
-          renderRow={this._renderRow}
-        />
+      <View>
+        <View style={styles.navBar}>
+          <TouchableHighlight style={styles.navItem} onPress={this.onClick} underlayColor="transparent">
+            <Image style={styles.swipe} source={require('../../assets/fist.png')}/>
+          </TouchableHighlight>
+        </View>
+        <View style={styles.container}>
+          <TextInput style={styles.search} placeholder='Search'/>
+          <Text style={styles.title}>MESSAGES</Text>
+          <ListView
+            dataSource={this.state.dataSource}
+            renderRow={this._renderRow}
+          />
+        </View>
       </View>
     );
   },
@@ -110,8 +114,20 @@ var Messages = React.createClass({
 });
 
 var styles = StyleSheet.create({
-  text: {
-    marginTop: 100
+  navBar: {
+    marginTop: 26,
+    marginBottom: 6,
+    paddingRight: 12,
+    paddingLeft: 12,
+  },
+  navItem: {
+    height: 24,
+    width: 26,
+    alignSelf: 'flex-start',
+  },
+  swipe: {
+    height: 24,
+    width: 26,
   },
   container: {
     padding: 10,

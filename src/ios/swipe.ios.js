@@ -5,6 +5,8 @@ var Messages = require('./messages.ios');
 
 var {
   Text,
+  Image,
+  TouchableHighlight,
   View,
   StyleSheet,
 } = React;
@@ -20,9 +22,11 @@ var Swipe = React.createClass({
   render: function() {
     return (
       <View>
-        <Text style={styles.text} onPress={this.onClick}>
-          Click Me
-        </Text>
+        <View style={styles.navBar}>
+          <TouchableHighlight style={styles.navItem} onPress={this.onClick} underlayColor="transparent">
+            <Image style={styles.messages} source={require('../../assets/messages.png')}/>
+          </TouchableHighlight>
+        </View>
         <Text>Swipe</Text>
         <Text>Swipe</Text>
         <Text>Swipe</Text>
@@ -37,8 +41,20 @@ var Swipe = React.createClass({
 });
 
 var styles = StyleSheet.create({
-  text: {
-    marginTop: 100
+  navBar: {
+    marginTop: 26,
+    marginBottom: 6,
+    paddingRight: 12,
+    paddingLeft: 12,
+  },
+  navItem: {
+    height: 24,
+    width: 26,
+    alignSelf: 'flex-end',
+  },
+  messages: {
+    height: 24,
+    width: 26,
   }
 });
 
