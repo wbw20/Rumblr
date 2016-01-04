@@ -27,14 +27,11 @@ var Swipe = React.createClass({
             <Image style={styles.messages} source={require('../../assets/messages.png')}/>
           </TouchableHighlight>
         </View>
-        <Text>Swipe</Text>
-        <Text>Swipe</Text>
-        <Text>Swipe</Text>
-        <Text>Swipe</Text>
-        <Text>Swipe</Text>
-        <Text>Swipe</Text>
-        <Text>Swipe</Text>
-        <Text>Swipe</Text>
+        <View style={styles.swipeContainer}>
+          <Image style={styles.swipePhoto} source={require('../../assets/fuckboi.jpeg')}/>
+          <Text style={styles.swipeName}>Jason, 14</Text>
+          <Text style={styles.swipeLocation}>Chico, CA</Text>
+        </View>
       </View>
     );
   }
@@ -55,6 +52,28 @@ var styles = StyleSheet.create({
   messages: {
     height: 24,
     width: 26,
+  },
+  swipeContainer: {
+    margin: 12,
+    paddingBottom: 5,
+    borderWidth: 1,
+    borderColor: '#EDEDED',
+    borderRadius: 5,
+    overflow: 'hidden',
+  },
+  swipePhoto: {
+    flex: 1,
+    alignSelf: 'center',
+  },
+  swipeName: {
+    fontSize: 16,
+    marginTop: 5,
+    marginLeft: 5,
+  },
+  swipeLocation: {
+    fontSize: 12,
+    marginTop: 5,
+    marginLeft: 5,
   }
 });
 
