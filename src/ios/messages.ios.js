@@ -94,6 +94,10 @@ var Messages = React.createClass({
     );
   },
 
+  _pressRow: function() {
+    // write some code here Will
+  },
+
   _renderRow: function(rowData, sectionID, rowID) {
 
     return (
