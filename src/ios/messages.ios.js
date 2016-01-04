@@ -76,7 +76,7 @@ var Messages = React.createClass({
 
   render: function() {
     return (
-      <View>
+      <View style={styles.background}>
         <View style={styles.navBar}>
           <TouchableHighlight style={styles.navItem} onPress={this.onClick} underlayColor="transparent">
             <Image style={styles.swipe} source={require('../../assets/fist.png')}/>
@@ -114,6 +114,9 @@ var Messages = React.createClass({
 });
 
 var styles = StyleSheet.create({
+  background: {
+    backgroundColor: 'white',
+  },
   navBar: {
     marginTop: 26,
     marginBottom: 6,

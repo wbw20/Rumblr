@@ -21,7 +21,7 @@ var Swipe = React.createClass({
 
   render: function() {
     return (
-      <View>
+      <View style={styles.background}>
         <View style={styles.navBar}>
           <TouchableHighlight style={styles.navItem} onPress={this.onClick} underlayColor="transparent">
             <Image style={styles.messages} source={require('../../assets/messages.png')}/>
@@ -38,6 +38,9 @@ var Swipe = React.createClass({
 });
 
 var styles = StyleSheet.create({
+  background: {
+    backgroundColor: 'white',
+  },
   navBar: {
     marginTop: 26,
     marginBottom: 6,
