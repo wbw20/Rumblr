@@ -70,9 +70,16 @@ var Messages = React.createClass({
     };
   },
 
+  onClick: function() {
+    this.props.navigator.jumpBack();
+  },
+
   render: function() {
     return (
       <View style={styles.container}>
+        <Text style={styles.text} onPress={this.onClick}>
+          Click Me
+        </Text>
         <TextInput style={styles.search} placeholder='Search'/>
         <Text style={styles.title}>MESSAGES</Text>
         <ListView
@@ -103,6 +110,9 @@ var Messages = React.createClass({
 });
 
 var styles = StyleSheet.create({
+  text: {
+    marginTop: 100
+  },
   container: {
     padding: 10,
   },

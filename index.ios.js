@@ -26,7 +26,9 @@ var Rumblr = React.createClass({
         initialRoute={{ name: 'Rumblr', component: Swipe }}
         renderScene={(route, navigator) => {
           if (route.component) {
-            return React.createElement(route.component, { navigator });
+            return React.createElement(route.component, {
+              navigator
+            });
           }
         }}
       />
