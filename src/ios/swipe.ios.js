@@ -12,6 +12,26 @@ var {
 } = React;
 
 var Swipe = React.createClass({
+  getInitialState: function() {
+    return {
+      x: 0,
+      y: 0,
+      rotate: 0
+    };
+  },
+
+  _rotationStyle: function() {
+    return {
+      transform: [{
+        translateX: this.state.x
+      }, {
+        translateX: this.state.y
+      }, {
+        rotate: this.state.rotate + 'deg'
+      }]
+    };
+  },
+
   _onClickMessages: function() {
     this.props.navigator.push({
       name: 'Messages',
@@ -19,12 +39,33 @@ var Swipe = React.createClass({
     });
   },
 
+  _animateSwipe: function(direction) {
+    var timer = setInterval(() => {
+
+      this.setState({
+        x: this.state.x + (direction == 'right' ? 40 : -40),
+        y: this.state.x + (direction == 'right' ? -5 : 5),
+        rotate: this.state.rotate + (direction == 'right' ? 2 : -2)
+      });
+
+      if (Math.abs(this.state.x) > 700) {
+        clearInterval(timer);
+        this._resetSwipe();
+      }
+
+    }, 20);
+  },
+
   _onClickPass: function() {
-    // TODO
+    this._animateSwipe('left');
   },
 
   _onClickFight: function() {
-    // TODO
+    this._animateSwipe('right');
+  },
+
+  _resetSwipe: function() {
+    this.setState(this.getInitialState());
   },
 
   render: function() {
@@ -35,7 +76,7 @@ var Swipe = React.createClass({
             <Image style={styles.messages} source={require('../../assets/messages.png')}/>
           </TouchableHighlight>
         </View>
-        <View style={styles.swipeContainer}>
+        <View style={[styles.swipeContainer, , this._rotationStyle()]}>
           <Image style={styles.swipePhoto} source={require('../../assets/fuckboi.jpeg')}/>
           <Text style={styles.swipeName}>Jason, 14</Text>
           <Text style={styles.swipeLocation}>Chico, CA</Text>
