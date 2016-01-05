@@ -1,6 +1,7 @@
 'use strict';
 
 var React = require('react-native');
+var Chat = require('./chat.ios');
 
 var {
   AppRegistry,
@@ -94,14 +95,17 @@ var Messages = React.createClass({
     );
   },
 
-  _pressRow: function() {
-    // write some code here Will
+  _onClickRow: function(rowId) {
+    this.props.navigator.push({
+      name: 'Chat',
+      component: Chat
+    });
   },
 
   _renderRow: function(rowData, sectionID, rowID) {
 
     return (
-      <TouchableHighlight onPress={() => this._pressRow(rowID)}>
+      <TouchableHighlight onPress={() => this._onClickRow(rowID)}>
         <View>
           <View style={styles.row}>
             <Image style={styles.thumb} source={rowData.profile} />
@@ -141,7 +145,7 @@ var styles = StyleSheet.create({
   },
   search: {
     height: 40,
-    borderColor: '#EDEDED',
+    borderColor: 'EDEDED',
     borderWidth: 1,
     marginTop: 20,
     textAlign: 'center',
@@ -157,7 +161,7 @@ var styles = StyleSheet.create({
   },
   separator: {
     height: 1,
-    backgroundColor: '#EDEDED',
+    backgroundColor: 'EDEDED',
   },
   thumb: {
     width: 64,
