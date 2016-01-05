@@ -1,7 +1,6 @@
 'use strict';
 
 var React = require('react-native');
-var Messages = require('./src/ios/messages.ios');
 var Swipe = require('./src/ios/swipe.ios');
 
 var {

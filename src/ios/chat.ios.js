@@ -7,6 +7,8 @@ var {
   Image,
   TouchableHighlight,
   View,
+  ScrollView,
+  TextInput,
   StyleSheet,
 } = React;
 
@@ -27,7 +29,7 @@ var Swipe = React.createClass({
             <Image style={styles.back} source={require('../../assets/arrow.png')}/>
           </TouchableHighlight>
         </View>
-        <View>
+        <ScrollView style={styles.chatContainer}>
           <View style={styles.from}>
             <Text style={styles.fromText}>Sup bro?</Text>
           </View>
@@ -43,6 +45,12 @@ var Swipe = React.createClass({
           <View style={styles.to}>
             <Text style={styles.toText}>ye</Text>
           </View>
+        </ScrollView>
+        <View style={styles.messageContainer}>
+          <TextInput style={styles.message} placeholder='Talk some shit'/>
+          <View style={styles.send}>
+            <Text style={styles.sendButton}>Send</Text>
+          </View>
         </View>
       </View>
     );
@@ -52,6 +60,11 @@ var Swipe = React.createClass({
 var styles = StyleSheet.create({
   background: {
     backgroundColor: 'white',
+    position: 'absolute',
+    top: 0,
+    bottom: 0,
+    left: 0,
+    right: 0,
   },
   navBar: {
     marginTop: 26,
@@ -70,6 +83,10 @@ var styles = StyleSheet.create({
   back: {
     height: 24,
     width: 32,
+  },
+  chatContainer: {
+    paddingRight: 6,
+    paddingLeft: 6,
   },
   from: {
     margin: 4,
@@ -100,7 +117,39 @@ var styles = StyleSheet.create({
   },
   toText: {
     color: 'white',
-  }
+  },
+  messageContainer: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 0,
+    left: 0,
+    right: 0,
+    padding: 7,
+    borderColor: 'D7D7D7',
+    borderTopWidth: 1,
+    backgroundColor: 'F7F7F7'
+  },
+  message: {
+    flex: 1,
+    height: 32,
+    borderColor: 'D7D7D7',
+    borderWidth: 1,
+    borderRadius: 4,
+    backgroundColor: 'white',
+    justifyContent: 'flex-start',
+    paddingLeft: 10,
+  },
+  send: {
+    width: 100,
+    justifyContent: 'flex-end',
+  },
+  sendButton: {
+    fontSize: 20,
+    fontWeight: '400',
+    color: '8E8E93',
+    marginTop: 3,
+    alignSelf: 'center'
+  },
 });
 
 module.exports = Swipe;
