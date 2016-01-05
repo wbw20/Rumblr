@@ -45,6 +45,99 @@ var Swipe = React.createClass({
           <View style={styles.to}>
             <Text style={styles.toText}>ye</Text>
           </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>Where we gunna throw down?</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Behind old man Stallman's</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Ya dig?</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Im gunna break ur face bro</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>yeah</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>I mean no</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>Your going down bro</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Sup bro?</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>Dude I will mess u up</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Come do it bro</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>U rdy to fight bro?</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>ye</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>Where we gunna throw down?</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Behind old man Stallman's</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Ya dig?</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Im gunna break ur face bro</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>yeah</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>I mean no</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>Your going down bro</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Sup bro?</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>Dude I will mess u up</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Come do it bro</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>U rdy to fight bro?</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>ye</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>Where we gunna throw down?</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Behind old man Stallman's</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Ya dig?</Text>
+          </View>
+          <View style={styles.from}>
+            <Text style={styles.fromText}>Im gunna break ur face bro</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>yeah</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>I mean no</Text>
+          </View>
+          <View style={styles.to}>
+            <Text style={styles.toText}>Your going down bro</Text>
+          </View>
         </ScrollView>
         <View style={styles.messageContainer}>
           <TextInput style={styles.message} placeholder='Talk some shit'/>
