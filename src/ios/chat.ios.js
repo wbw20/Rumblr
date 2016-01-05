@@ -58,6 +58,9 @@ var styles = StyleSheet.create({
     marginBottom: 6,
     paddingRight: 12,
     paddingLeft: 12,
+    paddingBottom: 12,
+    borderBottomWidth: 1,
+    borderColor: 'EDEDED',
   },
   navItem: {
     height: 24,
