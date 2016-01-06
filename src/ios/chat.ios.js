@@ -136,8 +136,9 @@ var Swipe = React.createClass({
             <Text style={styles.toText}>I mean no</Text>
           </View>
           <View style={styles.to}>
-            <Text style={styles.toText}>Your going down bro</Text>
+            <Text style={styles.toText}>You're going down bro</Text>
           </View>
+          <View  style={styles.spacer}></View>
         </ScrollView>
         <View style={styles.messageContainer}>
           <TextInput style={styles.message} placeholder='Talk some shit'/>
@@ -220,7 +221,7 @@ var styles = StyleSheet.create({
     padding: 7,
     borderColor: 'D7D7D7',
     borderTopWidth: 1,
-    backgroundColor: 'F7F7F7'
+    backgroundColor: 'F7F7F7',
   },
   message: {
     flex: 1,
@@ -243,6 +244,9 @@ var styles = StyleSheet.create({
     marginTop: 3,
     alignSelf: 'center'
   },
+  spacer: {
+    height: 52,
+  }
 });
 
 module.exports = Swipe;

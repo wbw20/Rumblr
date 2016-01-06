@@ -27,7 +27,7 @@ var fights = [{
   age: 32,
   profile: require('../../assets/avatar.png')
 }, {
-  name: 'Dill Mantrip',
+  name: 'Golden Mantrip Tate',
   age: 15,
   profile: require('../../assets/avatar.png')
 }, {

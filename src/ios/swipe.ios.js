@@ -11,6 +11,20 @@ var {
   StyleSheet,
 } = React;
 
+var players = [{
+  name: 'Jason',
+  age: 14,
+  picture: '../../assets/fuckboi.jpeg'
+}, {
+  name: 'Alan',
+  age: 23,
+  picture: '../../assets/alan.png'
+}, {
+  name: 'Bro',
+  age: 31,
+  picture: '../../assets/bro.png'
+}]
+
 var Swipe = React.createClass({
   getInitialState: function() {
     return {
@@ -76,10 +90,22 @@ var Swipe = React.createClass({
             <Image style={styles.messages} source={require('../../assets/messages.png')}/>
           </TouchableHighlight>
         </View>
-        <View style={[styles.swipeContainer, , this._rotationStyle()]}>
-          <Image style={styles.swipePhoto} source={require('../../assets/fuckboi.jpeg')}/>
-          <Text style={styles.swipeName}>Jason, 14</Text>
-          <Text style={styles.swipeLocation}>Chico, CA</Text>
+        <View>
+          <View style={[styles.swipeContainer3]}>
+            <Image style={styles.swipePhoto} source={require('../../assets/steven.png')}/>
+            <Text style={styles.swipeName}>Steven, 52</Text>
+            <Text style={styles.swipeLocation}>San Francisco, CA</Text>
+          </View>
+          <View style={[styles.swipeContainer2]}>
+            <Image style={styles.swipePhoto} source={require('../../assets/alan.png')}/>
+            <Text style={styles.swipeName}>Alan, 23</Text>
+            <Text style={styles.swipeLocation}>San Francisco, CA</Text>
+          </View>
+          <View style={[styles.swipeContainer, this._rotationStyle()]}>
+            <Image style={styles.swipePhoto} source={require('../../assets/fuckboi.jpeg')}/>
+            <Text style={styles.swipeName}>Jason, 14</Text>
+            <Text style={styles.swipeLocation}>San Francisco, CA</Text>
+          </View>
         </View>
         <View style={styles.buttons}>
           <TouchableHighlight style={styles.button} onPress={this._onClickPass}>
@@ -124,9 +150,33 @@ var styles = StyleSheet.create({
     borderRadius: 5,
     overflow: 'hidden',
   },
+  swipeContainer2: {
+    margin: 12,
+    paddingBottom: 5,
+    borderWidth: 1,
+    borderColor: 'EDEDED',
+    borderRadius: 5,
+    overflow: 'hidden',
+    marginBottom: -491,
+    transform: [{
+      scale: 0.98,
+    }],
+  },
+  swipeContainer3: {
+    margin: 12,
+    paddingBottom: 5,
+    borderWidth: 1,
+    borderColor: 'EDEDED',
+    borderRadius: 5,
+    overflow: 'hidden',
+    marginBottom: -491,
+    transform: [{
+      scale: 0.96,
+    }],
+  },
   swipePhoto: {
-    flex: 1,
     alignSelf: 'center',
+    height: 420,
   },
   swipeName: {
     fontSize: 16,
@@ -140,7 +190,7 @@ var styles = StyleSheet.create({
   },
   buttons: {
     flexDirection: 'row',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   button: {
     margin: 10,
